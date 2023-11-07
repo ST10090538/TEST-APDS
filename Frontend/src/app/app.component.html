@@ -1,0 +1,53 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: black; 
+        }
+
+        nav a {
+            padding: 35px 60px;
+            text-decoration: none;
+            color: white;
+        }
+        nav a:hover {
+            color: rgb(114, 177, 32);
+        }
+        nav a.router-link-active {
+            color: rgb(114, 177, 32);
+        }
+
+        h1 {
+            font-weight: bold;
+            background-color: black;
+            color: white;
+            padding: 10px 50px; 
+            margin: center;
+            margin-left: -600px; 
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+            <h1>National Government Departmental Bulletin Board</h1>
+            <a routerLink="/get">L I S T</a>
+            <a routerLink="/add">A D D</a>
+            <a routerLink="/login">L O G I N</a>
+            <a routerLink="/signup">S I G N U P</a>
+        </nav>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</body>
+</html>

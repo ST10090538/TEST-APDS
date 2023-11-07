@@ -1,0 +1,39 @@
+GET http://localhost:3000 HTTP/1.1
+###
+GET http://localhost:3000/tests HTTP/1.1
+###
+GET https://localhost:3000 HTTP/1.1
+###
+GET https://localhost:3000/api HTTP/1.1
+###
+GET https://localhost:3000/api/posts HTTP/1.1
+###
+POST https://localhost:3000/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "id":"4",
+    "name": "Problems"
+}
+###
+GET https://localhost:3000/api/posts HTTP/1.1
+###
+DELETE https://localhost:3000/api/posts/6525aff7c5924a52150e99bf HTTP/1.1
+###
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username":"alexthelander",
+    "password":"J3llyB3@ns4D!nn3r"
+}
+###
+POST https://localhost:3000/api/posts/ HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXh0aGVsYW5kZXIiLCJ1c2VySWQiOiI2NTI1YjA2MGM1OTI0YTUyMTUwZTk5YzIiLCJpYXQiOjE2OTY5Njg4NzAsImV4cCI6MTY5Njk3MjQ3MH0.aZlgngyXtzrm0TG-zQnART8eg7UU66NQvl53mqhZ8Pg
+
+{
+ "department": "Department of Transportation (DOT)",
+ "issue": "National Infrastructure Rehabilitation"
+}
+###

@@ -1,0 +1,117 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh; 
+            border: 3px solid black;
+            border-radius: 5px;
+            max-width: 320px;
+            max-height: 320px;
+            margin: 0 auto;
+            margin-top: 50px;
+            
+            
+        }
+
+        .container .header {
+            background-color: black; 
+            text-align: center;
+            color: white; 
+            padding: 10px 0;
+            width: 100%;
+            margin-bottom: 35px;
+        }
+
+        .container h2 {
+            margin: 0; 
+            color: white; 
+        }
+
+        form {
+            text-align: left;
+            margin-right: 17px;
+        }
+
+        form label {
+            display: block;
+            color: black;
+        }
+
+        form input, form button {
+            display: block;
+            margin: 10px 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 70px;
+        }
+        form input {
+        width: 100%; /* Set the width to 100% to make the input fields wider */
+        padding: 10px; /* Increase padding for a bigger height */
+       
+    }
+        form button {
+            background-color: black;
+            color: white;
+            border: 0;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+    
+        }
+        
+        form button.centered {
+            margin: 0 auto;
+        }
+
+     
+        form button:hover {
+            background-color: rgb(114, 177, 32);
+            border: 2px solid black;
+            color: white; 
+        }
+
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="header">
+                <h2>L O G I N</h2>
+            </div>
+            <form (submit)="onlogin(loginform)" #loginform="ngForm">
+                <label for="enteredusername">Username</label>
+                <input type="text"
+                ngModel name="enteredusername"
+                id="enteredusername"
+                placeholder="Username"
+                required
+                minLength="1"
+                pattern=".{2,}"
+                #enteredusername="ngModel" />
+              
+                <label for="enteredpassword">Password</label>
+                <input type="password"
+                ngModel name="enteredpassword"
+                id="enteredpassword"
+                placeholder="Password"
+                required
+                minLength="1"
+                pattern="^([a-zA-Z0-9@*#]{8,15})$"
+                #enteredpassword="ngModel" />
+                <br>
+                <button type="submit" class="centered">LOGIN</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

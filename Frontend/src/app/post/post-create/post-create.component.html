@@ -1,0 +1,76 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: #fff;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+       
+    
+        .form-container h2 {
+            color: black;
+            font-size: 24px;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .form-container input {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: black;
+            color: #fff;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s; 
+        }
+
+        .form-container button:hover {
+            background-color: rgb(114, 177, 32); /* Change background color to green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>ADD A POST</h2>
+        <form (submit)="onaddPost(addPost)" #addPost="ngForm">
+            <label for="department">Department</label>
+            <input type="text" ngModel name="department" id="department" placeholder="Enter department eg. Department of Transportation (DOT)" required minlength="1" pattern=".+"
+                #department="ngModel" />
+
+            <label for="issue">Issue</label>
+            <input type="text" ngModel name="issue" id="issue" placeholder="Enter issue eg. National Infrastructure Rehabilitation" required minlength="1" pattern=".+"
+                #issue="ngModel" />
+
+            <button type="submit">Add Post</button>
+        </form>
+    </div>
+</body>
+</html>
